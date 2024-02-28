@@ -1,0 +1,67 @@
+{% include "header.html" %} {% from "bootstrap5/form.html" import render_form %}
+
+<body>
+  <header class="header"></header>
+  <div class="container">
+    <div class="form-page">
+      <img
+        src="../static/assets/img/new logo.png"
+        alt="Envisage Logo"
+        class="logo"
+      />
+      <div class="header">
+        <h1 class="heading">Envisage</h1>
+        <ion-icon name="heart-outline"></ion-icon>
+      </div>
+
+      <div class="app">
+        <p class="text">Empower your day, one task at a time.</p>
+      </div>
+
+      <div class="form">
+        <form class="login-form">
+          <!-- <div class="box">
+            <label for="name" class="label">Name</label>
+            <input
+              name="name"
+              type="text"
+              id="name"
+              placeholder="Alexa Knight"
+              required
+            />
+          </div>
+
+          <div class="box">
+            <label for="email" class="label">Email</label>
+            <input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="me@example.com"
+              required
+            />
+          </div>
+
+          <div class="box">
+            <label for="password" class="label">Password</label>
+            <input
+              name="password"
+              type="password"
+              id="password"
+              placeholder="Input your password"
+              required
+            />
+
+            <button class="btn-form">Register</button>
+          </div> -->
+        </form>
+        {{render_form(form, novalidate=True, button_map={"submit": "primary"})
+        }}
+      </div>
+      <div class="reg">
+        <p class="new">Already have an account?</p>
+        <a href="{{url_for('home')}}" class="btn">Login</a>
+      </div>
+    </div>
+  </div>
+</body>

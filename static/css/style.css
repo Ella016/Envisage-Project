@@ -121,7 +121,8 @@ body {
   display: block;
   font-size: 12px;
   font-weight: 200;
-  padding: 7px;
+  padding: 9px;
+  /* margin-bottom: 8px; */
 }
 
 .btn-form {

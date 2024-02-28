@@ -1,0 +1,64 @@
+{% include "header.html" %}
+
+<body>
+  <header class="header"></header>
+  <div class="container">
+    <div class="form-page">
+      <img
+        src="../static/assets/img/new logo.png"
+        alt="Envisage Logo"
+        class="logo"
+      />
+      <div class="header">
+        <h1 class="heading">Envisage</h1>
+        <ion-icon name="heart-outline"></ion-icon>
+      </div>
+
+      <div class="app">
+        <p class="text">Empower your day, one task at a time.</p>
+        <a href="#" class="btn">Logout</a>
+      </div>
+      <div class="add">
+        <span class="subheading">My Tasks</span>
+        <a href="{{url_for('add')}}" class="btn">Add</a>
+      </div>
+      <div class="tasks">
+        <ul class="task-list">
+          <div class="items">
+            <li class="task-item">
+              <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
+              <span class="task">Date with Na In woo</span>
+              <a href="#" class="delete"
+                ><ion-icon name="close-outline" class="close"></ion-icon
+              ></a>
+            </li>
+
+            <li class="task-item">
+              <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
+              <span class="task">Write notes in my Journal.</span>
+              <a href="#" class="delete"
+                ><ion-icon name="close-outline" class="close"></ion-icon
+              ></a>
+            </li>
+
+            <li class="task-item">
+              <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
+              <span class="task">Date night witih the family.</span>
+              <a href="#" class="delete"
+                ><ion-icon name="close-outline" class="close"></ion-icon
+              ></a>
+            </li>
+
+            <!-- <li class="task-item">
+                <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
+                <span class="task">Task 4: </span>
+                <a href="#" class="delete"
+                  ><ion-icon name="close-outline" class="close"></ion-icon
+                ></a>
+              </li> -->
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
