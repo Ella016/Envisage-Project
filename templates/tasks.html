@@ -16,49 +16,51 @@
 
       <div class="app">
         <p class="text">Empower your day, one task at a time.</p>
-        <a href="#" class="btn">Logout</a>
+        <a href="{{url_for('logout')}}" class="btn">Logout</a>
       </div>
       <div class="add">
         <span class="subheading">My Tasks</span>
-        <a href="{{url_for('add')}}" class="btn">Add</a>
+        <a href="{{url_for('add_task')}}" class="btn">Add</a>
+        <a href="{{url_for('tasks')}}" class="btn">My Tasks</a>
       </div>
+
+      {% if tasks|length == 0 %}
+      <div class="row"></div>
+      <p class="text">Add a task or view tasks to see previous tasks</p>
+      {%elif uncompleted_task|length == 0%}
+      <div class="row"></div>
+      <p class="text">All tasks are completed</p>
+      {% endif %}
+
       <div class="tasks">
+        {% for task in uncompleted_task%}
+
         <ul class="task-list">
           <div class="items">
             <li class="task-item">
-              <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
-              <span class="task">Date with Na In woo</span>
-              <a href="#" class="delete"
+              <a href="{{url_for('check_task', task_id=task.id)}}"
+                ><ion-icon
+                  name="ellipse-outline"
+                  class="circle-icon"
+                  id="check-button"
+                ></ion-icon
+              ></a>
+
+              <span class="task"> {{task.task}}</span>
+
+              <a href="{{url_for('edit', task_id=task.id)}}" class="delete"
+                ><ion-icon name="pencil-outline"></ion-icon
+              ></a>
+              <a
+                href="{{url_for('delete_task', task_id=task.id)}}"
+                class="delete"
                 ><ion-icon name="close-outline" class="close"></ion-icon
               ></a>
             </li>
-
-            <li class="task-item">
-              <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
-              <span class="task">Write notes in my Journal.</span>
-              <a href="#" class="delete"
-                ><ion-icon name="close-outline" class="close"></ion-icon
-              ></a>
-            </li>
-
-            <li class="task-item">
-              <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
-              <span class="task">Date night witih the family.</span>
-              <a href="#" class="delete"
-                ><ion-icon name="close-outline" class="close"></ion-icon
-              ></a>
-            </li>
-
-            <!-- <li class="task-item">
-                <ion-icon name="ellipse-outline" class="circle-icon"></ion-icon>
-                <span class="task">Task 4: </span>
-                <a href="#" class="delete"
-                  ><ion-icon name="close-outline" class="close"></ion-icon
-                ></a>
-              </li> -->
           </div>
         </ul>
       </div>
+      {% endfor %}
     </div>
   </div>
 </body>

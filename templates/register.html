@@ -19,44 +19,12 @@
       </div>
 
       <div class="form">
-        <form class="login-form">
-          <!-- <div class="box">
-            <label for="name" class="label">Name</label>
-            <input
-              name="name"
-              type="text"
-              id="name"
-              placeholder="Alexa Knight"
-              required
-            />
-          </div>
-
-          <div class="box">
-            <label for="email" class="label">Email</label>
-            <input
-              name="email"
-              type="email"
-              id="email"
-              placeholder="me@example.com"
-              required
-            />
-          </div>
-
-          <div class="box">
-            <label for="password" class="label">Password</label>
-            <input
-              name="password"
-              type="password"
-              id="password"
-              placeholder="Input your password"
-              required
-            />
-
-            <button class="btn-form">Register</button>
-          </div> -->
-        </form>
-        {{render_form(form, novalidate=True, button_map={"submit": "primary"})
-        }}
+        <form class="login-form"></form>
+        {% with messages = get_flashed_messages()%} {% if messages%} {% for
+        message in messages%}
+        <p class="flash">{{ message }}</p>
+        {%endfor%} {%endif%} {%endwith%} {{render_form(form, novalidate=True,
+        button_map={"submit": "primary"}) }}
       </div>
       <div class="reg">
         <p class="new">Already have an account?</p>

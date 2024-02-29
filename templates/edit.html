@@ -1,28 +1,23 @@
-{% include "header.html" %}
-{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %} {% from "bootstrap5/form.html" import render_form %}
 
-  <body>
-    <header class="header"></header>
-    <div class="container">
-      <div class="form-page">
-        <img src="../static/assets/img/new logo.png"
-        alt="Envisage Logo" class="logo" />
-        <div class="header">
-          <h1 class="heading">Envisage</h1>
-          <ion-icon name="heart-outline"></ion-icon>
-        </div>
-
-        <div class="app">
-          <p class="text">Empower your day, one task at a time.</p>
-        </div>
-        <div class="row">
-          <!-- <input type="text" class="input" placeholder="Edit your task here" />
-          <button class="edit-task">
-            <ion-icon name="arrow-up-outline" class="arrow-icon"></ion-icon>
-          </button> -->
-          {{render_form(form, novalidate=True, button_map={"submit": "primary"})
-        }}
+<body>
+  <header class="header"></header>
+  <div class="container">
+    <div class="form-page">
+      <img
+        src="../static/assets/img/new logo.png"
+        alt="Envisage Logo"
+        class="logo"
+      />
+      <div class="header">
+        <h1 class="heading">Envisage</h1>
+        <ion-icon name="heart-outline"></ion-icon>
       </div>
+      <div class="app">
+        <p class="text">Empower your day, one task at a time.</p>
+      </div>
+      <div class="row"></div>
+      {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
     </div>
-  </body>
-
+  </div>
+</body>

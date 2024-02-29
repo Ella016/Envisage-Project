@@ -16,34 +16,11 @@
       <div class="app">
         <p class="text">Empower your day, one task at a time.</p>
       </div>
-
-      <!-- <div class="form">
-        <form class="login-form">
-          <div class="box">
-            <label for="email" class="label">Email</label>
-            <input
-              name="email"
-              type="email"
-              id="email"
-              placeholder="me@example.com"
-              required
-            />
-          </div>
-
-          <div class="box">
-            <label for="password" class="label">Password</label>
-            <input
-              name="password"
-              type="password"
-              id="password"
-              placeholder="Input your password"
-              required
-            />
-
-            <button class="btn-form">Login</button>
-          </div>
-        </form>
-      </div> -->
+      {% with messages = get_flashed_messages()%} {% if messages%} {% for
+      message in messages%}
+      <p>{{message}}</p>
+      {%endfor%} {%endif%} {%endwith%}
+      <div class="row"></div>
       {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
       <div class="reg">
         <p class="new">New?</p>

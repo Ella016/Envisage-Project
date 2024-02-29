@@ -8,4 +8,3 @@ Flask_WTF==1.2.1
 WTForms==3.0.1
 Werkzeug==2.3.6
 SQLAlchemy==2.0.19
-# pip install werkzeug==2.3.0

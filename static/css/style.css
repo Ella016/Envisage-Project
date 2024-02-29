@@ -167,7 +167,7 @@ body {
   background: #edeef0;
   border-radius: 5px;
 
-  margin: 100px;
+  margin: 20px;
 }
 
 .input {
@@ -190,6 +190,13 @@ body {
   cursor: pointer;
   /* margin-right: 10px; */
   border-radius: 5px;
+}
+.checked {
+  text-decoration: line-through;
+}
+
+.edit-task:hover {
+  color: #f9aad0;
 }
 
 .arrow-icon {
@@ -216,12 +223,13 @@ body {
 
 .task-list {
   list-style: none;
-  padding: 10px;
+  /* padding: 10px; */
   position: relative;
   /* margin-right: 200px; */
 }
 
 .task-item {
+  list-style: none;
   flex: 1;
   font-size: 14px;
   padding: 0 10px;
@@ -234,9 +242,10 @@ body {
   padding: 10px;
 }
 
+/* 
 .items {
   padding-bottom: 100px;
-}
+} */
 
 .checked {
   color: #333;
@@ -271,4 +280,9 @@ body {
 .add {
   display: flex;
   justify-content: space-between;
+}
+
+.footer,
+.copyright {
+  bottom: 0;
 }
