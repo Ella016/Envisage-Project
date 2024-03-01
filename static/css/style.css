@@ -281,8 +281,3 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
-.footer,
-.copyright {
-  bottom: 0;
-}

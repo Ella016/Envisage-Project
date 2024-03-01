@@ -1,7 +1,6 @@
 {% include "header.html" %}
 
 <body>
-  <header class="header"></header>
   <div class="container">
     <div class="form-page">
       <img
@@ -30,11 +29,9 @@
       {%elif uncompleted_task|length == 0%}
       <div class="row"></div>
       <p class="text">All tasks are completed</p>
-      {% endif %}
+      {% endif %} {% for task in uncompleted_task%}
 
       <div class="tasks">
-        {% for task in uncompleted_task%}
-
         <ul class="task-list">
           <div class="items">
             <li class="task-item">
@@ -45,9 +42,7 @@
                   id="check-button"
                 ></ion-icon
               ></a>
-
               <span class="task"> {{task.task}}</span>
-
               <a href="{{url_for('edit', task_id=task.id)}}" class="delete"
                 ><ion-icon name="pencil-outline"></ion-icon
               ></a>
