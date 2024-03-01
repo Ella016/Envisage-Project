@@ -6,14 +6,16 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_ckeditor import CKEditor
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
+import os
 
-
+load_dotenv()  #
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv("FLASK_SECRET_KEY")
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 db = SQLAlchemy()
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tasks-collection.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URI")
 db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
